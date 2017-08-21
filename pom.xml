@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+
+    <!--
+    -D 传入属性参数
+    -P 使用pom中指定的配置
+    -e 显示maven运行出错的信息
+    -o 离线执行命令,即不去远程仓库更新包
+    -X 显示maven允许的debug信息
+    -U 强制去远程参考更新snapshot包
+    -->
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.keng</groupId>
+    <artifactId>keng-centeral-pom</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+    <name>Keng::Maven::Jar::Centeral</name>
+
+    <description>
+        Project POM Root
+        提供私服仓库
+    </description>
+
+    <properties>
+        <junit.version>4.12</junit.version>
+
+        <!-- slf4j-simple slf4j-nop logback-classic 三个包在同一个lib中只能存在一个 -->
+        <log4j.version>1.2.17</log4j.version>
+        <log4j-over-slf4j.version>1.7.16</log4j-over-slf4j.version>
+        <jcl-over-slf4j.version>1.7.16</jcl-over-slf4j.version>
+        <jul-to-slf4j.version>1.7.16</jul-to-slf4j.version>
+        <slf4j-api.version>1.7.16</slf4j-api.version>
+        <slf4j-simple.version>1.7.16</slf4j-simple.version>
+        <logback-core.version>1.1.7</logback-core.version>
+        <logback-classic.version>1.1.7</logback-classic.version>
+
+
+        <commons-beanutils.version>1.8.3</commons-beanutils.version>
+        <commons-betwixt.version>0.8</commons-betwixt.version>
+        <commons-bsf.version>3.1</commons-bsf.version>
+        <commons-chain.version>1.2</commons-chain.version>
+        <commons-cli.version>0.8</commons-cli.version>
+        <commons-codec.version>1.10</commons-codec.version>
+        <commons-collections.version>3.2.1</commons-collections.version>
+        <commons-collections4.version>3.2.1</commons-collections4.version>
+        <commons-compress.version>1.12</commons-compress.version>
+        <commons-configuration.version>3.2.1</commons-configuration.version>
+        <commons-crypto.version>1.0.0</commons-crypto.version>
+        <commons-daemon.version>1.0.15</commons-daemon.version>
+        <commons-dbcp.version>1.4</commons-dbcp.version>
+        <commons-dbcp2.version>2.1.1</commons-dbcp2.version>
+        <commons-dbutils.version>1.6</commons-dbutils.version>
+        <commons-digester.version>2.1</commons-digester.version>
+        <commons-discovery.version>0.5</commons-discovery.version>
+        <commons-el.version>1.0</commons-el.version>
+        <commons-email.version>1.4</commons-email.version>
+        <commons-exec.version>1.3</commons-exec.version>
+        <commons-fileupload.version>1.3.2</commons-fileupload.version>
+        <commons-httpclient.version>3.1</commons-httpclient.version>
+        <apache-httpclient.version>4.5</apache-httpclient.version>
+        <commons-io.version>2.4</commons-io.version>
+        <commons-jci.version>1.1</commons-jci.version>
+        <commons-jcs.version>1.3</commons-jcs.version>
+        <commons-jelly.version>1.0</commons-jelly.version>
+        <commons-jexl.version>1.1</commons-jexl.version>
+        <commons-jxpath.version>1.3</commons-jxpath.version>
+        <commons-lang3.version>3.4</commons-lang3.version>
+        <commons-latka.version>1.0-alpha1</commons-latka.version>
+        <commons-launcher.version>1.1</commons-launcher.version>
+        <commons-loggin.version>1.1.3</commons-loggin.version>
+        <commons-math.version>2.2</commons-math.version>
+        <commons-math3.version>3.6</commons-math3.version>
+        <commons-modeler.version>2.0.1</commons-modeler.version>
+        <commons-net.version>3.5</commons-net.version>
+        <commons-pool.version>1.6.0.redhat-9</commons-pool.version>
+        <commons-pool2.version>2.4.2</commons-pool2.version>
+        <commons-primitives.version>1.0</commons-primitives.version>
+        <commons-validator.version>1.5.1</commons-validator.version>
+        <commons-vfs.version>2.1</commons-vfs.version>
+        <commons-weaver.version>1.3</commons-weaver.version>
+
+        <apache-poi.version>3.14</apache-poi.version>
+
+        <google-collections.version>1.0</google-collections.version>
+        <mysql-connector-java.version>5.1.30</mysql-connector-java.version>
+        <druid.version>1.0.18</druid.version>
+
+        <okhttp3.version>3.6.0</okhttp3.version>
+        <snakeyaml.version>1.18</snakeyaml.version>
+
+        <antlr.version>2.7.7</antlr.version>
+        <aopalliance.version>1.0</aopalliance.version>
+        <aspectjweaver.version>1.7.4</aspectjweaver.version>
+        <servlet-api3.version>3.1.0</servlet-api3.version>
+        <springframework.version>4.1.5.RELEASE</springframework.version>
+        <spring-data-redis.version>1.4.1.RELEASE</spring-data-redis.version>
+        <jedis.versioin>2.5.2</jedis.versioin>
+        <jackson.version>2.7.7</jackson.version>
+        <jackson-dataformat-yaml.version>2.7.7</jackson-dataformat-yaml.version>
+        <codehaus-jackson.version>1.9.13</codehaus-jackson.version>
+        <fastjson.version>1.1.37</fastjson.version>
+        <kaptcha.version>2.3.2</kaptcha.version>
+
+        <mina-core.versioin>2.0.13</mina-core.versioin>
+        <mina-integration-beans.version>2.0.13</mina-integration-beans.version>
+        <mina-integration-spring.version>1.1.7</mina-integration-spring.version>
+
+        <hibernate-validator.version>5.0.3.Final</hibernate-validator.version>
+        <hibernate.version>4.3.5.Final</hibernate.version>
+        <hibernate-entitymanager.version>4.3.5.Final</hibernate-entitymanager.version>
+        <hibernate-ehcache.version>4.3.5.Final</hibernate-ehcache.version>
+        <hibernate-commons-annotations.versioin>4.0.5.Final</hibernate-commons-annotations.versioin>
+        <hibernate-annotations.version>3.5.6-Final</hibernate-annotations.version>
+        <hibernate-ejb3-persistence.version>1.0.2.GA</hibernate-ejb3-persistence.version>
+        <hibernate-jpa-2.0-api.version>1.0.0.Final</hibernate-jpa-2.0-api.version>
+        <hibernate-jpa-2.1-api.version>1.0.0.Final</hibernate-jpa-2.1-api.version>
+
+        <jetty.version>9.3.12.v20160915</jetty.version>
+
+        <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+        <maven-war-plugin.version>2.6</maven-war-plugin.version>
+        <maven-source-plugin.version>2.4</maven-source-plugin.version>
+        <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
+        <maven-surefire-plugin.version>2.16</maven-surefire-plugin.version>
+        <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
+        <maven-clean-plugin.version>2.5</maven-clean-plugin.version>
+        <maven-install-plugin.version>2.5.1</maven-install-plugin.version>
+        <maven-bundle-plugin.version>2.5.4</maven-bundle-plugin.version>
+
+        <jdk.version>1.8</jdk.version>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+    </properties>
+
+    <!-- 依赖管理 -->
+    <!-- 需要的Jar包在这里加 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <!-- slf4j logging -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>log4j-over-slf4j</artifactId>
+                <version>${log4j-over-slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>${slf4j-simple.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${logback-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback-classic.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>${jcl-over-slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jul-to-slf4j</artifactId>
+                <version>${jul-to-slf4j.version}</version>
+            </dependency>
+
+
+            <!-- Commons-BeanUtils 提供对 Java 反射和自省API的包装 -->
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${commons-beanutils.version}</version>
+            </dependency>
+            <!--Betwixt提供将 JavaBean 映射至 XML 文档，以及相反映射的服务.-->
+            <dependency>
+                <groupId>commons-betwixt</groupId>
+                <artifactId>commons-betwixt</artifactId>
+                <version>${commons-betwixt.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-bsf</groupId>
+                <artifactId>commons-bsf</artifactId>
+                <version>${commons-bsf.version}</version>
+            </dependency>
+
+            <!-- Chain 提供实现组织复杂的处理流程的“责任链模式”. -->
+            <dependency>
+                <groupId>commons-chain</groupId>
+                <artifactId>commons-chain</artifactId>
+                <version>${commons-chain.version}</version>
+            </dependency>
+
+            <!-- CLI 提供针对命令行参数，选项，选项组，强制选项等的简单API -->
+            <dependency>
+                <groupId>commons-cli</groupId>
+                <artifactId>commons-cli</artifactId>
+                <version>${commons-cli.version}</version>
+            </dependency>
+
+            <!--Codec 包含一些通用的编码解码算法。包括一些语音编码器， Hex, Base64, 以及URL encoder.-->
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-codec.version}</version>
+            </dependency>
+
+            <!--Commons-Collections 提供一个类包来扩展和增加标准的 Java Collection框架-->
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>${commons-collections.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons-collections4.version}</version>
+            </dependency>
+
+            <!-- Commons-Configuration 工具对各种各式的配置和参考文件提供读取帮助. -->
+            <dependency>
+                <groupId>commons-configuration</groupId>
+                <artifactId>commons-configuration</artifactId>
+                <version>${commons-configuration.version}</version>
+            </dependency>
+
+            <!-- Defines an API for working with tar, zip and bzip2 files. -->
+            <dependency>
+                <groupId>commons-compress</groupId>
+                <artifactId>commons-compress</artifactId>
+                <version>${commons-compress.version}</version>
+            </dependency>
+
+            <!-- A cryptographic library optimized with AES-NI wrapping Openssl or JCE algorithm implementations. -->
+            <dependency>
+                <groupId>commons-crypto</groupId>
+                <artifactId>commons-crypto</artifactId>
+                <version>${commons-crypto.version}</version>
+            </dependency>
+
+            <!-- 一种 unix-daemon-like java 代码的替代机制 -->
+            <dependency>
+                <groupId>commons-daemon</groupId>
+                <artifactId>commons-daemon</artifactId>
+                <version>${commons-daemon.version}</version>
+            </dependency>
+
+            <!-- Commons-DBCP 提供数据库连接池服务 -->
+            <dependency>
+                <groupId>commons-dbcp</groupId>
+                <artifactId>commons-dbcp</artifactId>
+                <version>${commons-dbcp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-dbcp2</artifactId>
+                <version>${commons-dbcp2.version}</version>
+            </dependency>
+
+            <!-- DbUtils 是一个 JDBC helper 类库，完成数据库任务的简单的资源清除代码. -->
+            <dependency>
+                <groupId>commons-dbutils</groupId>
+                <artifactId>commons-dbutils</artifactId>
+                <version>${commons-dbutils.version}</version>
+            </dependency>
+
+            <!-- Commons-Digester 是一个 XML-Java对象的映射工具，用于解析 XML配置文件. -->
+            <dependency>
+                <groupId>commons-digester</groupId>
+                <artifactId>commons-digester</artifactId>
+                <version>${commons-digester.version}</version>
+            </dependency>
+
+            <!-- Commons-Discovery 提供工具来定位资源 (包括类) ，通过使用各种模式来映射服务/引用名称和资源名称。-->
+            <dependency>
+                <groupId>commons-discovery</groupId>
+                <artifactId>commons-discovery</artifactId>
+                <version>${commons-discovery.version}</version>
+            </dependency>
+
+            <!-- Commons-EL 提供在JSP2.0规范中定义的EL表达式的解释器. -->
+            <dependency>
+                <groupId>commons-el</groupId>
+                <artifactId>commons-el</artifactId>
+                <version>${commons-el.version}</version>
+            </dependency>
+
+            <!-- Library for sending e-mail from Java. -->
+            <dependency>
+                <groupId>commons-email</groupId>
+                <artifactId>commons-email</artifactId>
+                <version>${commons-email.version}</version>
+            </dependency>
+
+            <!-- API for dealing with external process execution and environment management in Java. -->
+            <dependency>
+                <groupId>commons-exec</groupId>
+                <artifactId>commons-exec</artifactId>
+                <version>${commons-exec.version}</version>
+            </dependency>
+
+            <!-- FileUpload 使得在你可以在应用和Servlet中容易的加入强大和高性能的文件上传能力 -->
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons-fileupload.version}</version>
+            </dependency>
+
+            <!-- Commons-HttpClient 提供了可以工作于HTTP协议客户端的一个框架. -->
+            <dependency>
+                <groupId>commons-httpclient</groupId>
+                <artifactId>commons-httpclient</artifactId>
+                <version>${commons-httpclient.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${apache-httpclient.version}</version>
+            </dependency>
+
+            <!-- IO 是一个 I/O 工具集 -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+
+            <!-- 编译接口 -->
+            <dependency>
+                <groupId>commons-jci</groupId>
+                <artifactId>commons-jci</artifactId>
+                <version>${commons-jci.version}</version>
+            </dependency>
+            <!-- 缓存 -->
+            <dependency>
+                <groupId>commons-jcs</groupId>
+                <artifactId>commons-jcs</artifactId>
+                <version>${commons-jcs.version}</version>
+            </dependency>
+
+            <!-- Jelly是一个基于 XML 的脚本和处理引擎。 Jelly 借鉴了 JSP 定指标签，Velocity, Cocoon和Xdoclet中的脚本引擎的许多优点。Jelly 可以用在命令行， Ant 或者 Servlet之中 -->
+            <dependency>
+                <groupId>commons-jelly</groupId>
+                <artifactId>commons-jelly</artifactId>
+                <version>${commons-jelly.version}</version>
+            </dependency>
+
+            <!-- Jexl是一个表达式语言，通过借鉴来自于Velocity的经验扩展了JSTL定义的表达式语言。. -->
+            <dependency>
+                <groupId>commons-jexl</groupId>
+                <artifactId>commons-jexl</artifactId>
+                <version>${commons-jexl.version}</version>
+            </dependency>
+
+            <!-- Commons-JXPath 提供了使用Xpath语法操纵符合Java类命名规范的 JavaBeans的工具。也支持 maps, DOM 和其他对象模型。-->
+            <dependency>
+                <groupId>commons-jxpath</groupId>
+                <artifactId>commons-jxpath</artifactId>
+                <version>${commons-jxpath.version}</version>
+            </dependency>
+
+            <!-- Commons-Lang 提供了许多许多通用的工具类集，提供了一些java.lang中类的扩展功能 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <!-- Commons-Latka 是一个HTTP 功能测试包，用于自动化的QA,验收和衰减测试. -->
+            <dependency>
+                <groupId>commons-latka</groupId>
+                <artifactId>commons-latka</artifactId>
+                <version>${commons-latka.version}</version>
+            </dependency>
+
+
+            <!-- Launcher 组件是一个交叉平台的Java 应用载入器。 Commons-launcher 消除了需要批处理或者Shell脚本来载入Java 类。.原始的 Java 类来自于Jakarta Tomcat 4.0 项目 -->
+            <dependency>
+                <groupId>commons-launcher</groupId>
+                <artifactId>commons-launcher</artifactId>
+                <version>${commons-launcher.version}</version>
+            </dependency>
+
+            <!-- Commons-Logging 是一个各种 logging API实现的包裹类. -->
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>${commons-loggin.version}</version>
+            </dependency>
+
+            <!-- Math 是一个轻量的，自包含的数学和统计组件，解决了许多非常通用但没有及时出现在Java标准语言中的实践问题. -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-math3</artifactId>
+                <version>${commons-math3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-math</artifactId>
+                <version>${commons-math.version}</version>
+            </dependency>
+
+            <!-- Commons-Modeler 提供了建模兼容JMX规范的 Mbean的机制. -->
+            <dependency>
+                <groupId>commons-modeler</groupId>
+                <artifactId>commons-modeler</artifactId>
+                <version>${commons-modeler}</version>
+            </dependency>
+
+            <!-- Net 是一个网络工具集，基于 NetComponents 代码，包括 FTP 客户端等等。-->
+            <dependency>
+                <groupId>commons-net</groupId>
+                <artifactId>commons-net</artifactId>
+                <version>${commons-net.version}</version>
+            </dependency>
+
+            <!-- Commons-Pool 提供了通用对象池接口，一个用于创建模块化对象池的工具包，以及通常的对象池实现. -->
+            <dependency>
+                <groupId>commons-pool</groupId>
+                <artifactId>commons-pool</artifactId>
+                <version>${commons-pool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons-pool2.version}</version>
+            </dependency>
+
+            <!-- Commons-Primitives提供了一个更小，更快和更易使用的对Java基本类型的支持。当前主要是针对基本类型的 collection。. -->
+            <dependency>
+                <groupId>commons-primitives</groupId>
+                <artifactId>commons-primitives</artifactId>
+                <version>${commons-primitives.version}</version>
+            </dependency>
+
+
+            <!-- The commons-validator提供了一个简单的，可扩展的框架来在一个XML文件中定义校验器 (校验方法)和校验规则。支持校验规则的和错误消息的国际化。 -->
+            <dependency>
+                <groupId>commons-validator</groupId>
+                <artifactId>commons-validator</artifactId>
+                <version>${commons-validator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-vfs</groupId>
+                <artifactId>commons-vfs</artifactId>
+                <version>${commons-vfs}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-weaver</groupId>
+                <artifactId>commons-weaver</artifactId>
+                <version>${commons-weaver.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.google.collections</groupId>
+                <artifactId>google-collections</artifactId>
+                <version>${google-collections.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${servlet-api3.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>antlr</groupId>
+                <artifactId>antlr</artifactId>
+                <version>${antlr.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>aopalliance</groupId>
+                <artifactId>aopalliance</artifactId>
+                <version>${aopalliance.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectjweaver.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${springframework.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-expression</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-orm</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-oxm</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+
+
+            <!-- Redis 配置 -->
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-redis</artifactId>
+                <version>${spring-data-redis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.versioin}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-yaml</artifactId>
+                <version>${jackson-dataformat-yaml.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-core-asl</artifactId>
+                <version>${codehaus-jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-mapper-asl</artifactId>
+                <version>${codehaus-jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code</groupId>
+                <artifactId>kaptcha</artifactId>
+                <version>${kaptcha.version}</version>
+            </dependency>
+
+            <!-- mina-->
+            <dependency>
+                <groupId>org.apache.mina</groupId>
+                <artifactId>mina-core</artifactId>
+                <version>${mina-core.versioin}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.mina</groupId>
+                <artifactId>mina-integration-beans</artifactId>
+                <version>${mina-integration-beans.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.mina</groupId>
+                <artifactId>mina-integration-spring</artifactId>
+                <version>${mina-integration-spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
+
+            <!-- Hibernate 注解 -->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-entitymanager</artifactId>
+                <version>${hibernate-entitymanager.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate.common</groupId>
+                <artifactId>hibernate-commons-annotations</artifactId>
+                <version>${hibernate-commons-annotations.versioin}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-annotations</artifactId>
+                <version>${hibernate-annotations.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.hibernate.javax.persistence</groupId>
+                        <artifactId>hibernate-jpa-2.0-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+                <version>${snakeyaml.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <inceptionYear>2017</inceptionYear>
+
+
+    <developers>
+        <developer>
+            <id>guoqy</id>
+            <name>guoqy</name>
+            <email>g.smaller118@gmail.com</email>
+            <url>http://www.siblings.top</url>
+            <roles>
+                <role>dev</role>
+            </roles>
+            <organization>keng</organization>
+            <organizationUrl></organizationUrl>
+            <properties>
+                <project>keng</project>
+            </properties>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+
+    <!-- 贡献者 -->
+    <contributors></contributors>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${jdk.version}</source>
+                        <target>${jdk.version}</target>
+                        <showWarnings>true</showWarnings>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${maven-war-plugin.version}</version>
+                    <configuration>
+                        <warName>${project.build.finalName}</warName>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven-source-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven-resources-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <phase>compile</phase>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin.version}</version>
+                    <configuration>
+                        <skipTests>true</skipTests>
+                        <testFailureIgnore>true</testFailureIgnore>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven-jar-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>${maven-clean-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>${maven-install-plugin.version}</version>
+                </plugin>
+                <!--
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <version>${maven-bundle-plugin.version}</version>
+                    <extensions>true</extensions>
+                </plugin>
+                -->
+            </plugins>
+        </pluginManagement>
+    </build>
+
+
+</project>
