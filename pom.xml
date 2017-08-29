@@ -19,7 +19,7 @@
     <artifactId>keng-centeral-pom</artifactId>
     <version>1.0.3</version>
     <packaging>pom</packaging>
-    <name>Keng::Maven::Jar::Centeral</name>
+    <name>Keng::Maven::POM::Centeral</name>
 
     <description>
         Project POM Root
@@ -99,7 +99,7 @@
         <servlet-api3.version>3.1.0</servlet-api3.version>
         <spring-data-redis.version>1.4.1.RELEASE</spring-data-redis.version>
         <jedis.versioin>2.5.2</jedis.versioin>
-        <jackson.version>2.7.7</jackson.version>
+        <ali.jackson.version>2.7.7</ali.jackson.version>
         <jackson-dataformat-yaml.version>2.7.7</jackson-dataformat-yaml.version>
         <codehaus-jackson.version>1.9.13</codehaus-jackson.version>
         <fastjson.version>1.1.37</fastjson.version>
@@ -121,8 +121,6 @@
 
         <jetty.version>9.3.12.v20160915</jetty.version>
 
-        <spring-boot.version>1.5.6.RELEASE</spring-boot.version>
-
         <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
         <maven-war-plugin.version>2.6</maven-war-plugin.version>
         <maven-source-plugin.version>2.4</maven-source-plugin.version>
@@ -143,17 +141,17 @@
         <maven.compiler.source>1.8</maven.compiler.source>
     </properties>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.6.RELEASE</version>
+        <relativePath />
+    </parent>
+
     <!-- 依赖管理 -->
     <!-- 需要的Jar包在这里加 -->
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-parent</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
 
             <dependency>
                 <groupId>junit</groupId>
@@ -556,12 +554,12 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
-                <version>${jackson.version}</version>
+                <version>${ali.jackson.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
-                <version>${jackson.version}</version>
+                <version>${ali.jackson.version}</version>
             </dependency>
 
             <dependency>
@@ -820,7 +818,7 @@
         <repository>
             <id>ali</id>
             <name>Ali Nexus</name>
-            <url>http://182.92.236.19/nexus/content/groups/public/</url>
+            <url>http://139.196.140.110/nexus/content/groups/public/</url>
             <releases>
                 <enabled>true</enabled>
                 <checksumPolicy>warn</checksumPolicy>
@@ -839,7 +837,7 @@
         <pluginRepository>
             <id>Ali Plugin</id>
             <name>Ali Nexus Plugins</name>
-            <url>http://182.92.236.19/nexus/content/groups/public/</url>
+            <url>http://139.196.140.110/nexus/content/groups/public/</url>
             <layout>default</layout>
             <releases>
                 <enabled>true</enabled>
@@ -858,13 +856,13 @@
         <repository>
             <id>nexus-releases</id>
             <name>nexus-releases</name>
-            <url>http://182.92.236.19/nexus/content/repositories/releases/</url>
+            <url>http://139.196.140.110/nexus/content/repositories/releases/</url>
             <uniqueVersion>true</uniqueVersion>
         </repository>
         <snapshotRepository>
             <id>nexus-snapshots</id>
             <name>nexus-snapshots</name>
-            <url>http://182.92.236.19/nexus/content/repositories/snapshots/</url>
+            <url>http://139.196.140.110/nexus/content/repositories/snapshots/</url>
             <uniqueVersion>true</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
