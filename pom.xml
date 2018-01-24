@@ -17,7 +17,7 @@
 
     <groupId>com.keng</groupId>
     <artifactId>keng-centeral-pom</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.4.1</version>
     <packaging>pom</packaging>
     <name>Keng::Maven::POM::Centeral</name>
 
@@ -879,14 +879,14 @@
 
     <distributionManagement>
         <repository>
-            <id>nexus-releases</id>
-            <name>nexus-releases</name>
+            <id>ali-releases</id>
+            <name>ali-releases</name>
             <url>http://maven.siblings.top/nexus/content/repositories/releases/</url>
             <uniqueVersion>true</uniqueVersion>
         </repository>
         <snapshotRepository>
-            <id>nexus-snapshots</id>
-            <name>nexus-snapshots</name>
+            <id>ali-snapshots</id>
+            <name>ali-snapshots</name>
             <url>http://maven.siblings.top/nexus/content/repositories/snapshots/</url>
             <uniqueVersion>true</uniqueVersion>
         </snapshotRepository>
