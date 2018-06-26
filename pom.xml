@@ -17,7 +17,7 @@
 
     <groupId>com.keng</groupId>
     <artifactId>keng-centeral-pom</artifactId>
-    <version>1.0.4.1</version>
+    <version>1.0.4.3</version>
     <packaging>pom</packaging>
     <name>Keng::Maven::POM::Centeral</name>
 
@@ -39,6 +39,7 @@
         <logback-core.version>1.1.7</logback-core.version>
         <logback-classic.version>1.1.7</logback-classic.version>
 
+        <spring.boot.version>1.5.12.RELEASE</spring.boot.version>
 
         <commons-beanutils.version>1.8.3</commons-beanutils.version>
         <commons-betwixt.version>0.8</commons-betwixt.version>
@@ -88,7 +89,7 @@
 
         <google-collections.version>1.0</google-collections.version>
         <mysql-connector-java.version>5.1.30</mysql-connector-java.version>
-        <druid.version>1.0.18</druid.version>
+        <druid.version>1.1.6</druid.version>
 
         <okhttp3.version>3.6.0</okhttp3.version>
         <snakeyaml.version>1.18</snakeyaml.version>
@@ -141,17 +142,16 @@
         <maven.compiler.source>1.8</maven.compiler.source>
     </properties>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.6.RELEASE</version>
-        <relativePath />
-    </parent>
-
     <!-- 依赖管理 -->
     <!-- 需要的Jar包在这里加 -->
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>${spring.boot.version}</version>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
