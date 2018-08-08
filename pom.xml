@@ -17,7 +17,7 @@
 
     <groupId>com.keng</groupId>
     <artifactId>keng-centeral-pom</artifactId>
-    <version>1.0.4.3</version>
+    <version>1.0.4.4</version>
     <packaging>pom</packaging>
     <name>Keng::Maven::POM::Centeral</name>
 
@@ -150,6 +150,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-parent</artifactId>
                 <version>${spring.boot.version}</version>
+                <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
