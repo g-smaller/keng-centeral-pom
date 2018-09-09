@@ -17,7 +17,7 @@
 
     <groupId>com.keng</groupId>
     <artifactId>keng-centeral-pom</artifactId>
-    <version>1.0.4.4</version>
+    <version>1.0.4.5</version>
     <packaging>pom</packaging>
     <name>Keng::Maven::POM::Centeral</name>
 
@@ -50,7 +50,8 @@
         <commons-collections.version>3.2.1</commons-collections.version>
         <commons-collections4.version>3.2.1</commons-collections4.version>
         <commons-compress.version>1.12</commons-compress.version>
-        <commons-configuration.version>3.2.1</commons-configuration.version>
+        <commons-configuration.version>1.10</commons-configuration.version>
+        <commons-tow-configuration.version>2.3</commons-tow-configuration.version>
         <commons-crypto.version>1.0.0</commons-crypto.version>
         <commons-daemon.version>1.0.15</commons-daemon.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
@@ -240,6 +241,13 @@
                 <groupId>commons-configuration</groupId>
                 <artifactId>commons-configuration</artifactId>
                 <version>${commons-configuration.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-configuration2 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-configuration2</artifactId>
+                <version>${commons-tow-configuration.version}</version>
             </dependency>
 
             <!-- Defines an API for working with tar, zip and bzip2 files. -->
